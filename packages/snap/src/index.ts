@@ -6,6 +6,7 @@ import { getAlerts } from './forta';
  *
  * @param args - The request handler args as object.
  * @param args.transaction - The transaction object.
+ * @param args.chainId - The transaction network chain ID.
  * @returns The transaction insights.
  */
 export const onTransaction: OnTransactionHandler = async ({

@@ -7,6 +7,7 @@ import { FORTA_GRAPHQL_URL } from 'forta-agent/dist/sdk/graphql/forta';
  * and attempting to decode it.
  *
  * @param transaction - The transaction to get insights for.
+ * @param chainId - The transaction network chain ID.
  * @returns The transaction insights.
  */
 export const getAlerts = async (
@@ -17,7 +18,7 @@ export const getAlerts = async (
     const query = {
       input: {
         first: 3,
-        chainId: parseInt(chainId.split(':')[1]),
+        chainId: parseInt(chainId.split(':')[1], 10),
         addresses: [transaction.to as string],
       },
     };
