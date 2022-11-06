@@ -3,6 +3,15 @@
   "version": "0.1.0",
   "private": false,
   "description": "An experimental Forta alerts Snap plugin.",
+  "keywords": [
+    "metamask",
+    "forta",
+    "snap",
+    "experimental",
+    "alert",
+    "detection",
+    "openzeppelin"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/shahnami/forta-snap.git"
