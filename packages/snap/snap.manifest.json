@@ -1,13 +1,13 @@
 {
   "version": "0.1.0",
-  "description": "A Forta Alerts Snap.",
+  "description": "An experimental Forta Alerts Snap.",
   "proposedName": "Forta Alerts",
   "repository": {
     "type": "git",
     "url": "https://github.com/MetaMask/template-snap-monorepo.git"
   },
   "source": {
-    "shasum": "B2pPe79PiS60zWI3On11JxeYneRB+aWOnCUIPnwBPa4=",
+    "shasum": "hsccXpcxzcobIf1+OXmxTSdBoFT9ajbs1Vy+U/Fq0q0=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",

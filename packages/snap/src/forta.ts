@@ -1,5 +1,4 @@
 import { FORTA_GRAPHQL_URL } from 'forta-agent/dist/sdk/graphql/forta';
-import _ from 'lodash';
 
 /* eslint-enable camelcase */
 
@@ -37,17 +36,29 @@ export const getAlerts = async (
       }),
     });
 
-    const alerts = (await response.json()).data.alerts.alerts.map((a: any) => {
-      return { severity: a.severity, name: a.name };
+    const alerts: any[] =
+      (await response.json()).data.alerts.alerts.map((a: any) => {
+        return {
+          severity: a.severity,
+          name: a.name,
+          description: a.description,
+        };
+      }) ?? [];
+
+    const alertsAsKeys: any = {};
+    alerts.forEach((element) => {
+      alertsAsKeys[
+        `${element.name} (${element.severity.toLowerCase()})`
+      ] = `${element.description}`;
     });
 
     return {
       to: transaction.to,
-      chain: parseInt(chainId.split(':')[1]),
       alerts:
         alerts && alerts.length > 0
-          ? `${alerts.length} alerts found.`
-          : 'No alerts found for this address',
+          ? `🚨 Forta matched at least ${alerts.length} alerts to this address.`
+          : '✅ Forta matched no alerts to this address.',
+      ...alertsAsKeys,
     };
   } catch (error) {
     console.error(error);

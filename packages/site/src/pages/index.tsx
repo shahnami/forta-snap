@@ -185,9 +185,8 @@ const Index = () => {
         )}
         <Card
           content={{
-            title: 'Send Hello message',
-            description:
-              'Display a custom message within a confirmation screen in MetaMask.',
+            title: 'Send Example transaction',
+            description: 'Send a custom transaction.',
             button: (
               <SendHelloButton
                 onClick={handleSendHelloClick}
